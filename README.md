@@ -34,7 +34,7 @@ public/
 
 ## Deployment
 
-- GitHub repository: akan diisi setelah push selesai
+- GitHub repository: https://github.com/madaldho/oriskin-ekalosari
 - Vercel production URL: https://oriskin-ekalosari.vercel.app
 
 ## Catatan
