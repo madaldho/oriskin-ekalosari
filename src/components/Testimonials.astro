@@ -1,22 +1,52 @@
 ---
 const testimonials = [
   {
-    text: '"Sudah 2 tahun jadi pasien setia Oriskin. Flek hitam di wajah saya sudah hilang hampir 90% setelah rutin perawatan laser. Dokternya ramah, detail, dan selalu menjelaskan prosedur dengan sabar. Sangat recommended!"',
-    initials: 'RA',
-    name: 'Rina Anggraini',
-    role: 'Ibu Rumah Tangga, Bogor',
+    text: "Cozy place, very good experience, nice people. I'd love to recommend this treatment for you all",
+    photo: '/reviewers/vina.jpg',
+    name: 'Vina Yustika Dewi',
+    source: 'Google Maps',
   },
   {
-    text: '"Awalnya ragu mau coba facial di sini, tapi setelah konsultasi sama dokternya langsung yakin. Perawatannya nyaman, hasilnya langsung kelihatan dari sesi pertama. Kulit jadi lebih glowing dan sehat. Tempatnya juga bersih dan cozy banget!"',
-    initials: 'DP',
-    name: 'Dewi Puspita',
-    role: 'Karyawan Swasta, Depok',
+    text: 'Cozy place with excellent service. There are variety of treatments offered such as facial treatments etc.',
+    photo: '/reviewers/rai.jpg',
+    name: 'Rai Indah Nurbani',
+    source: 'Google Maps',
   },
   {
-    text: '"Chemical peeling di Oriskin beneran bagus! Bekas jerawat saya yang sudah bertahun-tahun akhirnya mulai memudar. Prosesnya cepat dan nggak sakit. Tim kliniknya profesional dan ramah. Worth every penny, pokoknya puas banget!"',
-    initials: 'SA',
-    name: 'Sarah Amelia',
-    role: 'Mahasiswi, Bogor',
+    text: 'The staff was helpful and very informative. They will recommend any treatment based on your skin condition. They also recommend payment options for your treatment. Great, thanks!',
+    photo: '/reviewers/lailita.jpg',
+    name: 'Lailita Nurul F',
+    source: 'Google Maps',
+  },
+  {
+    text: 'Staffnya very very kind and informative!! Such a cozy place to do facial, skincare, and especially self reward 🫶',
+    photo: '/reviewers/angelia.jpg',
+    name: 'Angelia Trisandi',
+    source: 'Google Maps',
+  },
+  {
+    text: 'First time facial treatment here. Nice treatment and service. Very worth it, would love to come back again!',
+    photo: '/reviewers/cantika.jpg',
+    name: 'Cantika NZ',
+    source: 'Google Maps',
+  },
+  {
+    text: 'Good and friendly service, staff, doctors and everyone provided a pleasant service for the first time.',
+    photo: '/reviewers/anggraeni.jpg',
+    name: 'Anggraeni Pramono',
+    source: 'Google Maps',
+  },
+  {
+    text: 'Thank you Oriskin, the place and service are all good.',
+    photo: '/reviewers/rizki.jpg',
+    name: 'Rizki Handayani',
+    source: 'Google Maps',
+  },
+  {
+    text: 'Fresh, attractive care and friendly service. Highly recommended!',
+    photo: '/reviewers/rima.jpg',
+    name: 'Rima Lianawati',
+    source: 'Google Maps',
   },
 ];
 ---
@@ -26,121 +56,33 @@ const testimonials = [
     <div class="testimonials-header reveal">
       <p class="section-label">Testimoni</p>
       <h2 class="section-title">Apa Kata Mereka</h2>
-      <p class="section-subtitle">Cerita nyata dari pasien yang telah merasakan manfaat perawatan di Oriskin Ekalokasari Bogor.</p>
+      <p class="section-subtitle">Ulasan asli dari pasien di Google Maps — bukan rekayasa.</p>
     </div>
-    <div class="testi-carousel reveal reveal-delay-1" id="testiCarousel">
-      <div class="testi-track" id="testiTrack">
-        {testimonials.map((testi) => (
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars" aria-label="5 dari 5 bintang">
-                {Array.from({ length: 5 }).map(() => (
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
-                ))}
-              </div>
-              <p class="testi-text">{testi.text}</p>
-              <div class="testi-author">
-                <div class="testi-avatar">{testi.initials}</div>
-                <div>
-                  <div class="testi-name">{testi.name}</div>
-                  <div class="testi-role">{testi.role}</div>
-                </div>
-              </div>
+    <div class="testi-grid">
+      {testimonials.map((testi, i) => (
+        <div class={`testi-card reveal ${i > 0 ? `reveal-delay-${Math.min(i, 7)}` : ''}`}>
+          <div class="testi-stars" aria-label="5 dari 5 bintang">
+            {Array.from({ length: 5 }).map(() => (
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            ))}
+          </div>
+          <p class="testi-text">{testi.text}</p>
+          <div class="testi-author">
+            <img src={testi.photo} alt={testi.name} class="testi-avatar" loading="lazy" width="40" height="40" />
+            <div>
+              <p class="testi-name">{testi.name}</p>
+              <p class="testi-src">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                {testi.source}
+              </p>
             </div>
           </div>
-        ))}
-      </div>
-      <div class="testi-dots" id="testiDots">
-        {testimonials.map((_, i) => (
-          <button class={`testi-dot ${i === 0 ? 'active' : ''}`} data-index={i} aria-label={`Slide ${i + 1}`}></button>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
+    <p class="testi-note reveal">Sumber: <a href="https://maps.google.com/maps/place/?q=place_id:ChIJ-y1mfubFaS4RebW05q__szw" target="_blank" rel="noopener">Google Maps Reviews</a> · Rating 5.0 dari 3.300+ ulasan</p>
   </div>
 </section>
-
-<script>
-  const testiTrack = document.getElementById('testiTrack');
-  const testiDots = document.querySelectorAll('.testi-dot');
-  let currentSlide = 0;
-  const totalSlides = 3;
-  let autoSlideInterval: ReturnType<typeof setInterval>;
-
-  function getSlidesPerView() {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 640) return 2;
-    return 1;
-  }
-
-  function getMaxSlide() {
-    return Math.max(0, totalSlides - getSlidesPerView());
-  }
-
-  function updateCarousel(animate = true) {
-    const slidesPerView = getSlidesPerView();
-    const slideWidth = 100 / slidesPerView;
-    const offset = currentSlide * slideWidth;
-    if (testiTrack) {
-      testiTrack.style.transition = animate
-        ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-        : 'none';
-      testiTrack.style.transform = `translateX(-${offset}%)`;
-    }
-    testiDots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentSlide);
-    });
-  }
-
-  function nextSlide() {
-    const maxSlide = getMaxSlide();
-    currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
-    updateCarousel();
-  }
-
-  function startAutoSlide() {
-    stopAutoSlide();
-    autoSlideInterval = setInterval(nextSlide, 4500);
-  }
-
-  function stopAutoSlide() {
-    if (autoSlideInterval) clearInterval(autoSlideInterval);
-  }
-
-  testiDots.forEach((dot) => {
-    dot.addEventListener('click', function() {
-      const index = parseInt(this.getAttribute('data-index') || '0');
-      currentSlide = Math.min(index, getMaxSlide());
-      updateCarousel();
-      startAutoSlide();
-    });
-  });
-
-  // Touch/swipe support
-  let touchStartX = 0;
-  testiTrack?.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-    stopAutoSlide();
-  }, { passive: true });
-
-  testiTrack?.addEventListener('touchend', (e) => {
-    const diff = touchStartX - e.changedTouches[0].screenX;
-    const maxSlide = getMaxSlide();
-    if (Math.abs(diff) > 50) {
-      if (diff > 0 && currentSlide < maxSlide) currentSlide++;
-      else if (diff < 0 && currentSlide > 0) currentSlide--;
-      updateCarousel();
-    }
-    startAutoSlide();
-  }, { passive: true });
-
-  window.addEventListener('resize', () => {
-    if (currentSlide > getMaxSlide()) currentSlide = getMaxSlide();
-    updateCarousel(false);
-  });
-
-  updateCarousel(false);
-  startAutoSlide();
-</script>
 
 <style>
   .testimonials {
@@ -149,121 +91,106 @@ const testimonials = [
 
   .testimonials-header {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
 
   .testimonials-header .section-subtitle {
     margin: 0 auto;
   }
 
-  .testi-carousel {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .testi-track {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .testi-slide {
-    min-width: 100%;
-    padding: 0 8px;
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .testi-card {
     background: var(--white);
     border-radius: var(--radius-lg);
-    padding: 36px 32px;
+    padding: 24px;
     border: 1px solid var(--border);
-    height: 100%;
+    transition: all var(--transition);
+  }
+
+  .testi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(232,123,123,0.15);
   }
 
   .testi-stars {
     display: flex;
-    gap: 4px;
-    margin-bottom: 20px;
+    gap: 2px;
+    margin-bottom: 14px;
   }
 
   .testi-stars svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     fill: #F59E0B;
+    stroke: none;
   }
 
   .testi-text {
-    font-size: 1rem;
-    color: var(--charcoal-light);
-    line-height: 1.8;
-    margin-bottom: 24px;
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-bottom: 18px;
     font-style: italic;
+    font-weight: 300;
   }
 
   .testi-author {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
   }
 
   .testi-avatar {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: var(--sage-pale);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lora', serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--sage);
-    flex-shrink: 0;
+    object-fit: cover;
+    border: 2px solid var(--pink-pale);
   }
 
   .testi-name {
+    font-size: 0.82rem;
     font-weight: 600;
-    font-size: 0.95rem;
     color: var(--charcoal);
   }
 
-  .testi-role {
+  .testi-src {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .testi-src svg {
+    width: 12px;
+    height: 12px;
+    color: #22C55E;
+  }
+
+  .testi-note {
+    text-align: center;
+    margin-top: 28px;
     font-size: 0.8rem;
     color: var(--text-muted);
   }
 
-  .testi-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 32px;
-  }
-
-  .testi-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--border);
-    border: none;
-    cursor: pointer;
-    transition: all var(--transition);
-    padding: 0;
-  }
-
-  .testi-dot.active {
-    background: var(--terracotta);
-    width: 28px;
-    border-radius: 5px;
+  .testi-note a {
+    color: var(--pink);
+    font-weight: 600;
   }
 
   @media (min-width: 640px) {
-    .testi-slide {
-      min-width: 50%;
-    }
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (min-width: 1024px) {
-    .testi-slide {
-      min-width: 33.333%;
-    }
+    .testi-grid { grid-template-columns: repeat(4, 1fr); }
   }
 </style>

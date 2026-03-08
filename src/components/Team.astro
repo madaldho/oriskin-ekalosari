@@ -1,0 +1,232 @@
+---
+const teamMembers = [
+  {
+    image: '/doctor-portrait.png',
+    name: 'dr. Sarah Amira, Sp.KK',
+    role: 'Dokter Spesialis Kulit & Kelamin',
+    desc: 'Berpengalaman 10+ tahun di bidang estetika dan dermatologi.',
+  },
+  {
+    image: '/doctor-portrait.png',
+    name: 'dr. Nadia Putri, M.Biomed',
+    role: 'Dokter Estetika',
+    desc: 'Spesialis laser treatment dan anti-aging procedures.',
+  },
+  {
+    image: '/doctor-portrait.png',
+    name: 'dr. Rina Kartika',
+    role: 'Dokter Umum & Kecantikan',
+    desc: 'Ahli chemical peeling dan perawatan kulit bermasalah.',
+  },
+  {
+    image: '/doctor-portrait.png',
+    name: 'Sari Dewi, S.Kep',
+    role: 'Head Beautician',
+    desc: 'Certified beautician dengan pelatihan internasional.',
+  },
+];
+---
+
+<section class="team" id="tim">
+  <div class="container">
+    <div class="team-header reveal">
+      <p class="section-label">Tim Kami</p>
+      <h2 class="section-title">Ditangani oleh Ahlinya</h2>
+      <p class="section-subtitle">Tim profesional kami siap memberikan perawatan terbaik untuk kulit Anda.</p>
+    </div>
+
+    <div class="team-carousel reveal reveal-delay-1" id="teamCarousel">
+      <div class="team-track" id="teamTrack">
+        {teamMembers.map((member) => (
+          <div class="team-slide">
+            <div class="team-card">
+              <div class="team-img">
+                <img src={member.image} alt={member.name} loading="lazy" width="300" height="360" />
+              </div>
+              <div class="team-info">
+                <h3>{member.name}</h3>
+                <p class="team-role">{member.role}</p>
+                <p class="team-desc">{member.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="team-dots" id="teamDots"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('teamTrack')!;
+  const dotsContainer = document.getElementById('teamDots')!;
+  const slides = track.querySelectorAll('.team-slide');
+  let current = 0;
+  let autoTimer: ReturnType<typeof setInterval>;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('team-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.team-dot');
+
+  function goTo(index: number) {
+    current = index;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(next, 4000);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+  }
+
+  startAuto();
+
+  const carousel = document.getElementById('teamCarousel')!;
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+
+  // Swipe support
+  let startX = 0;
+  carousel.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; stopAuto(); });
+  carousel.addEventListener('touchend', (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { diff > 0 ? goTo(Math.min(current+1, slides.length-1)) : goTo(Math.max(current-1, 0)); }
+    startAuto();
+  });
+</script>
+
+<style>
+  .team {
+    padding: 96px 0;
+    background: var(--white);
+  }
+
+  .team-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .team-header .section-subtitle {
+    margin: 0 auto;
+  }
+
+  .team-carousel {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .team-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .team-slide {
+    flex: 0 0 100%;
+    padding: 0 40px;
+  }
+
+  .team-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .team-img {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .team-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(232,123,123,0.1), transparent);
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+  }
+
+  .team-info h3 {
+    font-size: 1.35rem;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--pink);
+    margin-bottom: 12px;
+  }
+
+  .team-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .team-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .team-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .team-dot.active {
+    background: var(--pink);
+    width: 28px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .team-card {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .team-slide {
+      padding: 0 16px;
+    }
+
+    .team-img img {
+      height: 280px;
+    }
+  }
+</style>

@@ -1,0 +1,156 @@
+---
+const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi%20tentang%20produk%20skincare';
+
+const products = [
+  {
+    title: 'Brightening Series',
+    desc: 'Rangkaian produk pencerah wajah untuk kulit kusam, flek, dan bekas jerawat. Formulasi dokter dengan bahan aktif premium.',
+    tag: 'Best Seller',
+  },
+  {
+    title: 'Acne Care Series',
+    desc: 'Produk khusus kulit berjerawat dengan antibakteri dan anti-inflamasi. Kontrol minyak tanpa bikin kering.',
+    tag: 'Recommended',
+  },
+  {
+    title: 'Anti-Aging Series',
+    desc: 'Kolagen booster dan retinol series untuk mengencangkan kulit, menyamarkan garis halus, dan tampak awet muda.',
+    tag: 'Premium',
+  },
+  {
+    title: 'Daily Sunscreen SPF50+',
+    desc: 'Sunscreen ringan dengan tekstur nyaman, perlindungan UVA/UVB maksimal. Cocok untuk daily use di bawah makeup.',
+    tag: 'Wajib Punya',
+  },
+];
+---
+
+<section class="products" id="produk">
+  <div class="container">
+    <div class="products-header reveal">
+      <p class="section-label">Produk Kami</p>
+      <h2 class="section-title">Skincare by Oriskin</h2>
+      <p class="section-subtitle">Produk perawatan kulit yang diformulasikan langsung oleh dokter spesialis kulit.</p>
+    </div>
+    <div class="products-grid">
+      {products.map((product, i) => (
+        <div class={`product-card reveal ${i > 0 ? `reveal-delay-${i}` : ''}`}>
+          <div class="product-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7Z"/><path d="M2 7l10 7 10-7"/></svg>
+          </div>
+          <span class="product-tag">{product.tag}</span>
+          <h3>{product.title}</h3>
+          <p>{product.desc}</p>
+          <a href={waLink} class="product-link" target="_blank" rel="noopener">
+            Tanya Produk
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .products {
+    padding: 96px 0;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--pink-pale) 50%, var(--bg) 100%);
+  }
+
+  .products-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .products-header .section-subtitle {
+    margin: 0 auto;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(232,123,123,0.2);
+  }
+
+  .product-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--pink-pale);
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+  }
+
+  .product-icon svg {
+    width: 22px;
+    height: 22px;
+    color: var(--pink);
+  }
+
+  .product-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--pink-dark);
+    background: var(--pink-pale);
+    margin-bottom: 12px;
+  }
+
+  .product-card h3 {
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  .product-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--pink);
+    transition: gap 0.25s;
+  }
+
+  .product-link:hover { gap: 12px; }
+
+  .product-link svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  @media (min-width: 640px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .products-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
