@@ -1,0 +1,100 @@
+---
+const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi';
+---
+
+<section class="before-after" id="hasil">
+  <div class="container">
+    <div class="ba-wrapper">
+      <div class="ba-image reveal">
+        <img src="/before-after-1.png" alt="Hasil perawatan sebelum dan sesudah di Oriskin Bogor" loading="lazy" width="600" height="400" />
+      </div>
+      <div class="ba-content reveal reveal-delay-1">
+        <p class="section-label">Hasil Nyata</p>
+        <h2 class="section-title">Transformasi yang Berbicara</h2>
+        <p>Kami percaya hasil terbaik berbicara sendiri. Lihat bagaimana perawatan kami telah membantu ribuan pasien mendapatkan kulit impian mereka.</p>
+        <p>Setiap perawatan disesuaikan dengan kondisi dan kebutuhan kulit masing-masing pasien untuk hasil yang optimal dan aman.</p>
+        <div class="ba-stats">
+          <div class="ba-stat">
+            <strong>95%</strong>
+            <span>Pasien puas dengan hasil</span>
+          </div>
+          <div class="ba-stat">
+            <strong>3-6x</strong>
+            <span>Sesi untuk hasil optimal</span>
+          </div>
+        </div>
+        <a href={waLink} class="btn-primary" target="_blank" rel="noopener">
+          Konsultasi Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .before-after {
+    padding: 96px 0;
+    background: var(--white);
+  }
+
+  .ba-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .ba-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .ba-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .ba-content {
+    max-width: 480px;
+  }
+
+  .ba-content .section-title {
+    margin-bottom: 20px;
+  }
+
+  .ba-content p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .ba-stats {
+    display: flex;
+    gap: 32px;
+    margin: 32px 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ba-stat strong {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    color: var(--terracotta);
+    margin-bottom: 4px;
+  }
+
+  .ba-stat span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  @media (min-width: 768px) {
+    .ba-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,169 @@
+---
+const faqItems = [
+  {
+    question: 'Apakah konsultasi pertama gratis?',
+    answer: 'Ya, konsultasi pertama dengan dokter kami sepenuhnya gratis. Anda bisa berkonsultasi tentang kondisi kulit, mendapatkan analisis kulit, dan rekomendasi perawatan yang sesuai tanpa biaya apapun. Hubungi kami via WhatsApp untuk membuat janji.',
+  },
+  {
+    question: 'Berapa lama waktu yang dibutuhkan untuk melihat hasil?',
+    answer: 'Hasil perawatan bervariasi tergantung jenis treatment dan kondisi kulit Anda. Untuk facial treatment, Anda bisa melihat perbedaan setelah sesi pertama. Untuk laser dan chemical peeling, biasanya diperlukan 3-6 sesi untuk hasil yang optimal. Dokter kami akan memberikan timeline yang realistis saat konsultasi.',
+  },
+  {
+    question: 'Apakah perawatan di Oriskin aman untuk semua jenis kulit?',
+    answer: 'Tentu! Sebelum melakukan perawatan apapun, dokter kami akan melakukan analisis menyeluruh terhadap jenis dan kondisi kulit Anda. Setiap treatment disesuaikan secara khusus agar aman dan efektif untuk tipe kulit Anda, termasuk kulit sensitif. Kami menggunakan produk dan alat berstandar internasional yang telah teruji secara klinis.',
+  },
+  {
+    question: 'Bagaimana cara membuat janji perawatan?',
+    answer: 'Sangat mudah! Anda bisa langsung menghubungi kami melalui WhatsApp di nomor 0812-8804-5939 atau klik tombol "Konsultasi Gratis" di halaman ini. Tim kami akan membantu Anda memilih jadwal yang sesuai. Kami juga menerima walk-in, namun disarankan untuk membuat janji terlebih dahulu agar tidak perlu menunggu.',
+  },
+  {
+    question: 'Berapa kisaran biaya perawatan di Oriskin?',
+    answer: 'Biaya perawatan bervariasi tergantung jenis treatment yang dipilih. Kami menawarkan berbagai pilihan yang disesuaikan dengan berbagai budget. Saat ini kami juga memiliki promo diskon hingga 30% untuk kunjungan pertama. Untuk informasi harga detail, silakan hubungi kami melalui WhatsApp dan tim kami akan dengan senang hati membantu Anda.',
+  },
+];
+---
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Pertanyaan Umum</h2>
+      <p class="section-subtitle">Jawaban untuk pertanyaan yang sering diajukan tentang perawatan di Oriskin Ekalokasari Bogor.</p>
+    </div>
+    <div class="faq-list">
+      {faqItems.map((item, i) => (
+        <div class={`faq-item reveal ${i > 0 ? `reveal-delay-${i}` : ''}`}>
+          <button class="faq-question" aria-expanded="false">
+            <span>{item.question}</span>
+            <span class="faq-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">{item.answer}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach((item) => {
+    const questionBtn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer') as HTMLElement | null;
+
+    questionBtn?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      faqItems.forEach((otherItem) => {
+        otherItem.classList.remove('open');
+        const otherAnswer = otherItem.querySelector('.faq-answer') as HTMLElement | null;
+        if (otherAnswer) otherAnswer.style.maxHeight = '';
+        otherItem.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked if was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        questionBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+<style>
+  .faq {
+    padding: 96px 0;
+    background: var(--white);
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .faq-header .section-subtitle {
+    margin: 0 auto;
+  }
+
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    gap: 16px;
+    transition: color var(--transition);
+  }
+
+  .faq-question:hover {
+    color: var(--terracotta);
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition);
+  }
+
+  .faq-icon svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.open .faq-icon {
+    background: var(--terracotta);
+  }
+
+  .faq-item.open .faq-icon svg {
+    transform: rotate(180deg);
+    stroke: white;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                padding 0.4s ease;
+  }
+
+  .faq-answer-inner {
+    padding-bottom: 22px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,146 @@
+---
+const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi';
+---
+
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="/hero-clinic.png" alt="Oriskin Ekalokasari Bogor klinik kecantikan" width="1920" height="1080" />
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+        Klinik Kecantikan Terpercaya di Bogor
+      </div>
+      <h1 class="reveal reveal-delay-1">Kulit Sehat & <em>Bercahaya</em> Dimulai di Sini</h1>
+      <p class="hero-desc reveal reveal-delay-2">Perawatan kulit profesional dengan teknologi terkini dan sentuhan personal dari dokter berpengalaman. Hasil nyata, aman, dan terpercaya.</p>
+      <div class="hero-buttons reveal reveal-delay-3">
+        <a href={waLink} class="btn-primary" target="_blank" rel="noopener">
+          Konsultasi Gratis
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#layanan" class="btn-secondary">Lihat Layanan</a>
+      </div>
+      <div class="hero-info reveal reveal-delay-4">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p><strong>Buka Senin - Sabtu</strong> &bull; 09:00 - 22:00 WIB</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(247, 244, 239, 0.92) 0%,
+      rgba(247, 244, 239, 0.75) 50%,
+      rgba(247, 244, 239, 0.45) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+    padding: 120px 0 80px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: var(--sage-pale);
+    border-radius: 60px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sage);
+    margin-bottom: 28px;
+  }
+
+  .hero-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--charcoal-light);
+    margin-bottom: 36px;
+    max-width: 480px;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+
+  .hero-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    max-width: fit-content;
+  }
+
+  .hero-info svg {
+    width: 18px;
+    height: 18px;
+    color: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .hero-info p {
+    font-size: 0.85rem;
+    color: var(--charcoal-light);
+  }
+
+  .hero-info strong {
+    color: var(--charcoal);
+  }
+</style>

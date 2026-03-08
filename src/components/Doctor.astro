@@ -1,0 +1,105 @@
+---
+const credentials = [
+  'Certified Aesthetic Doctor',
+  '10+ Tahun Pengalaman',
+  '5000+ Pasien',
+  'Pelatihan Internasional',
+];
+---
+
+<section class="doctor" id="dokter">
+  <div class="container">
+    <div class="doctor-wrapper">
+      <div class="doctor-image reveal">
+        <img src="/doctor-portrait.png" alt="Dokter kecantikan profesional di Oriskin Ekalokasari Bogor" loading="lazy" width="500" height="600" />
+        <div class="doctor-accent"></div>
+      </div>
+      <div class="doctor-content reveal reveal-delay-1">
+        <p class="section-label">Tim Dokter Kami</p>
+        <h2>dr. Oriskin Specialist</h2>
+        <p class="doctor-title">Dokter Estetika & Kecantikan Kulit</p>
+        <p>Dengan pengalaman lebih dari 10 tahun di bidang estetika dan dermatologi, tim dokter kami berkomitmen memberikan perawatan terbaik dengan standar keamanan tertinggi.</p>
+        <p>Setiap prosedur dilakukan dengan teknik terkini dan produk berkualitas internasional untuk memastikan hasil yang optimal bagi setiap pasien.</p>
+        <div class="doctor-credentials">
+          {credentials.map(cred => (
+            <span class="credential-tag">{cred}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .doctor {
+    padding: 96px 0;
+  }
+
+  .doctor-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .doctor-image {
+    position: relative;
+  }
+
+  .doctor-image img {
+    width: 100%;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .doctor-accent {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 120px;
+    height: 120px;
+    background: var(--sage-pale);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .doctor-content h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    margin-bottom: 8px;
+  }
+
+  .doctor-title {
+    font-size: 1rem;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .doctor-content p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .doctor-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .credential-tag {
+    padding: 8px 16px;
+    background: var(--sage-pale);
+    border-radius: 60px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sage);
+  }
+
+  @media (min-width: 768px) {
+    .doctor-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

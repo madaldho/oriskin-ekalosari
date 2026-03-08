@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oriskin Ekalokasari Bogor - Klinik kecantikan premium dengan perawatan wajah, laser, dan peeling terbaik di Bogor. Konsultasi gratis sekarang!">
+  <meta name="keywords" content="klinik kecantikan bogor, facial bogor, laser wajah bogor, peeling bogor, oriskin bogor">
+  <meta name="author" content="Oriskin Ekalokasari Bogor">
+  <meta property="og:title" content="Oriskin Ekalokasari Bogor - Klinik Kecantikan Premium">
+  <meta property="og:description" content="Perawatan kulit profesional dengan teknologi terkini. 5000+ pasien puas, 10+ tahun pengalaman.">
+  <meta property="og:image" content="assets/hero-clinic.png">
+  <meta property="og:type" content="website">
+  <title>Oriskin Ekalokasari Bogor - Klinik Kecantikan Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #F7F4EF;
+      --bg-warm: #F0EBE3;
+      --charcoal: #1F2937;
+      --charcoal-light: #374151;
+      --terracotta: #C97A5A;
+      --terracotta-dark: #B5694B;
+      --terracotta-light: #D99A7E;
+      --sage: #6E7F63;
+      --sage-light: #8A9B80;
+      --sage-pale: #E8EDE5;
+      --white: #FFFFFF;
+      --cream: #FFFAF5;
+      --border: #E5E0D8;
+      --text-muted: #6B7280;
+      --shadow-sm: 0 1px 3px rgba(31,41,55,0.06);
+      --shadow-md: 0 4px 16px rgba(31,41,55,0.08);
+      --shadow-lg: 0 8px 32px rgba(31,41,55,0.1);
+      --shadow-xl: 0 16px 48px rgba(31,41,55,0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--charcoal);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    /* ========== UTILITY ========== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: var(--terracotta);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 60px;
+      transition: all var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,122,90,0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--charcoal);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1.5px solid var(--border);
+      border-radius: 60px;
+      transition: all var(--transition);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    /* ========== SCROLL REVEAL ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: all 0.4s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(247, 244, 239, 0.82);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(229, 224, 216, 0.5);
+      padding: 12px 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-brand span {
+      color: var(--terracotta);
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--charcoal-light);
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--terracotta);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--terracotta);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: none;
+      padding: 10px 24px;
+      background: var(--terracotta);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 60px;
+      transition: all var(--transition);
+    }
+
+    .nav-cta:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .mobile-menu.open {
+      right: 0;
+    }
+
+    .mobile-menu a {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      transition: color var(--transition);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--terracotta);
+    }
+
+    .mobile-menu .btn-primary {
+      margin-top: 12px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(247, 244, 239, 0.92) 0%,
+        rgba(247, 244, 239, 0.75) 50%,
+        rgba(247, 244, 239, 0.45) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      padding: 120px 0 80px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: var(--sage-pale);
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--sage);
+      margin-bottom: 28px;
+    }
+
+    .hero-badge svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--charcoal-light);
+      margin-bottom: 36px;
+      max-width: 480px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .hero-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.7);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      max-width: fit-content;
+    }
+
+    .hero-info svg {
+      width: 18px;
+      height: 18px;
+      color: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .hero-info p {
+      font-size: 0.85rem;
+      color: var(--charcoal-light);
+    }
+
+    .hero-info strong {
+      color: var(--charcoal);
+    }
+
+    /* ========== TRUST STATS ========== */
+    .trust {
+      padding: 64px 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .trust-item {
+      padding: 24px 16px;
+    }
+
+    .trust-number {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .trust-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .trust-divider {
+      display: none;
+      width: 1px;
+      background: var(--border);
+      margin: 0 auto;
+    }
+
+    /* ========== SERVICES ========== */
+    .services {
+      padding: 96px 0;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .services-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .service-card-img {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .service-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .service-card:hover .service-card-img img {
+      transform: scale(1.05);
+    }
+
+    .service-card-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.9);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--sage);
+    }
+
+    .service-card-body {
+      padding: 28px 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--terracotta);
+      transition: gap var(--transition);
+    }
+
+    .service-link:hover {
+      gap: 14px;
+    }
+
+    .service-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform var(--transition);
+    }
+
+    .service-link:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ========== BEFORE AFTER ========== */
+    .before-after {
+      padding: 96px 0;
+      background: var(--white);
+    }
+
+    .ba-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .ba-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .ba-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .ba-content {
+      max-width: 480px;
+    }
+
+    .ba-content .section-title {
+      margin-bottom: 20px;
+    }
+
+    .ba-content p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .ba-stats {
+      display: flex;
+      gap: 32px;
+      margin: 32px 0;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ba-stat strong {
+      display: block;
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+
+    .ba-stat span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ========== DOCTOR ========== */
+    .doctor {
+      padding: 96px 0;
+    }
+
+    .doctor-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .doctor-image {
+      position: relative;
+    }
+
+    .doctor-image img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .doctor-accent {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 120px;
+      height: 120px;
+      background: var(--sage-pale);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .doctor-content h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      margin-bottom: 8px;
+    }
+
+    .doctor-title {
+      font-size: 1rem;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .doctor-content p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .doctor-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .credential-tag {
+      padding: 8px 16px;
+      background: var(--sage-pale);
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--sage);
+    }
+
+    /* ========== PROMO ========== */
+    .promo {
+      padding: 96px 0;
+      background: var(--white);
+    }
+
+    .promo-card {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #2D3748 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promo-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201,122,90,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .promo-card::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(110,127,99,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .promo-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .promo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(201,122,90,0.15);
+      border: 1px solid rgba(201,122,90,0.3);
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--terracotta-light);
+      margin-bottom: 24px;
+    }
+
+    .promo-card h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .promo-card h2 em {
+      font-style: italic;
+      color: var(--terracotta-light);
+    }
+
+    .promo-card > p {
+      color: rgba(255,255,255,0.7);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    .promo-card .btn-primary {
+      background: var(--terracotta);
+      font-size: 1rem;
+      padding: 18px 42px;
+    }
+
+    .promo-card .btn-primary:hover {
+      background: var(--terracotta-light);
+    }
+
+    .promo-terms {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      padding: 96px 0;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .testimonials-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .testi-carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testi-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .testi-slide {
+      min-width: 100%;
+      padding: 0 8px;
+    }
+
+    .testi-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      height: 100%;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .testi-stars svg {
+      width: 18px;
+      height: 18px;
+      fill: #F59E0B;
+    }
+
+    .testi-text {
+      font-size: 1rem;
+      color: var(--charcoal-light);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testi-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--sage-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+    }
+
+    .testi-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .testi-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .testi-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      padding: 0;
+    }
+
+    .testi-dot.active {
+      background: var(--terracotta);
+      width: 28px;
+      border-radius: 5px;
+    }
+
+    /* ========== FAQ ========== */
+    .faq {
+      padding: 96px 0;
+      background: var(--white);
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .faq-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      gap: 16px;
+      transition: color var(--transition);
+    }
+
+    .faq-question:hover {
+      color: var(--terracotta);
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .faq-icon svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--terracotta);
+    }
+
+    .faq-item.open .faq-icon svg {
+      transform: rotate(180deg);
+      stroke: white;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  padding 0.4s ease;
+    }
+
+    .faq-answer-inner {
+      padding-bottom: 22px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* ========== LOCATION ========== */
+    .location {
+      padding: 96px 0;
+    }
+
+    .location-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .location-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .location-map {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+
+    .location-map img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .location-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .location-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--sage-pale);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .location-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--sage);
+    }
+
+    .location-item h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .location-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .location-hours {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .hour-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+    }
+
+    .hour-row .day {
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .hour-row .time {
+      color: var(--text-muted);
+    }
+
+    .hour-row.closed .time {
+      color: var(--terracotta);
+      font-weight: 600;
+    }
+
+    /* ========== FINAL CTA ========== */
+    .final-cta {
+      padding: 96px 0;
+      background: var(--sage-pale);
+    }
+
+    .final-cta-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 16px;
+    }
+
+    .final-cta p {
+      color: var(--charcoal-light);
+      margin-bottom: 36px;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .final-cta .btn-primary {
+      padding: 18px 42px;
+      font-size: 1rem;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--charcoal);
+      padding: 64px 0 32px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand span {
+      color: var(--terracotta-light);
+    }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--terracotta-light);
+    }
+
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--terracotta);
+    }
+
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+      fill: rgba(255,255,255,0.7);
+    }
+
+    .footer-social a:hover svg {
+      fill: white;
+    }
+
+    /* ========== STICKY WA BUTTON ========== */
+    .wa-sticky {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .wa-tooltip {
+      background: var(--white);
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all var(--transition);
+      pointer-events: none;
+    }
+
+    .wa-sticky:hover .wa-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .wa-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.45);
+    }
+
+    .wa-btn svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    .wa-btn::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #25D366;
+      animation: waPulse 2s infinite;
+      z-index: -1;
+    }
+
+    @keyframes waPulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      70% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* ========== MEDIA QUERIES ========== */
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 32px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testi-slide {
+        min-width: 50%;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .ba-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .doctor-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .location-map img {
+        height: 100%;
+        min-height: 320px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 48px;
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .service-card-img {
+        height: 200px;
+      }
+
+      .testi-slide {
+        min-width: 33.333%;
+      }
+
+      .promo-card {
+        padding: 72px 64px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigasi utama">
+    <div class="container">
+      <a href="#" class="nav-brand">Ori<span>skin</span></a>
+      <ul class="nav-links">
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#hasil">Hasil</a></li>
+        <li><a href="#dokter">Dokter</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#lokasi">Lokasi</a></li>
+      </ul>
+      <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="nav-cta" target="_blank" rel="noopener">Konsultasi Gratis</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu navigasi mobile">
+    <a href="#layanan" class="mobile-link">Layanan</a>
+    <a href="#hasil" class="mobile-link">Hasil</a>
+    <a href="#dokter" class="mobile-link">Dokter</a>
+    <a href="#testimoni" class="mobile-link">Testimoni</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#lokasi" class="mobile-link">Lokasi</a>
+    <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="btn-primary" target="_blank" rel="noopener">
+      Konsultasi Gratis
+    </a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/hero-clinic.png" alt="Oriskin Ekalokasari Bogor klinik kecantikan" loading="eager" width="1920" height="1080">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          Klinik Kecantikan Terpercaya di Bogor
+        </div>
+        <h1 class="reveal reveal-delay-1">Kulit Sehat & <em>Bercahaya</em> Dimulai di Sini</h1>
+        <p class="hero-desc reveal reveal-delay-2">Perawatan kulit profesional dengan teknologi terkini dan sentuhan personal dari dokter berpengalaman. Hasil nyata, aman, dan terpercaya.</p>
+        <div class="hero-buttons reveal reveal-delay-3">
+          <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="btn-primary" target="_blank" rel="noopener">
+            Konsultasi Gratis
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#layanan" class="btn-secondary">Lihat Layanan</a>
+        </div>
+        <div class="hero-info reveal reveal-delay-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <p><strong>Buka Senin - Sabtu</strong> &bull; 09:00 - 20:00 WIB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST STATS ========== -->
+  <section class="trust" aria-label="Statistik kepercayaan">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <div class="trust-number">5.000+</div>
+          <div class="trust-label">Pasien Puas</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-1">
+          <div class="trust-number">10+</div>
+          <div class="trust-label">Tahun Pengalaman</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-2">
+          <div class="trust-number">4.9</div>
+          <div class="trust-label">Rating Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="services-header reveal">
+        <p class="section-label">Layanan Kami</p>
+        <h2 class="section-title">Perawatan Terbaik untuk Kulit Anda</h2>
+        <p class="section-subtitle">Setiap perawatan dirancang khusus sesuai kebutuhan kulit Anda dengan teknologi terkini dan bahan berkualitas tinggi.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-card-img">
+            <img src="assets/service-facial.png" alt="Facial treatment premium di Oriskin Bogor" loading="lazy" width="400" height="300">
+            <span class="service-card-badge">Terpopuler</span>
+          </div>
+          <div class="service-card-body">
+            <h3>Facial Treatment</h3>
+            <p>Deep cleansing facial dengan teknik terkini untuk membersihkan, menutrisi, dan mencerahkan kulit wajah secara menyeluruh.</p>
+            <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="service-link" target="_blank" rel="noopener">
+              Booking Sekarang
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-card-img">
+            <img src="assets/service-laser.png" alt="Laser treatment modern di Oriskin Bogor" loading="lazy" width="400" height="300">
+            <span class="service-card-badge">Teknologi Terbaru</span>
+          </div>
+          <div class="service-card-body">
+            <h3>Laser Treatment</h3>
+            <p>Teknologi laser canggih untuk mengatasi flek hitam, bekas jerawat, pori-pori besar, dan meremajakan kulit wajah Anda.</p>
+            <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="service-link" target="_blank" rel="noopener">
+              Booking Sekarang
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-card-img">
+            <img src="assets/service-peeling.png" alt="Chemical peeling treatment di Oriskin Bogor" loading="lazy" width="400" height="300">
+            <span class="service-card-badge">Best Seller</span>
+          </div>
+          <div class="service-card-body">
+            <h3>Chemical Peeling</h3>
+            <p>Eksfoliasi profesional untuk mengangkat sel kulit mati, menyamarkan kerutan halus, dan memperbaiki tekstur kulit.</p>
+            <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="service-link" target="_blank" rel="noopener">
+              Booking Sekarang
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+        <article class="service-card reveal reveal-delay-3">
+          <div class="service-card-img">
+            <img src="assets/clinic-exterior.png" alt="Konsultasi kulit dengan dokter ahli di Oriskin Bogor" loading="lazy" width="400" height="300">
+            <span class="service-card-badge">Gratis</span>
+          </div>
+          <div class="service-card-body">
+            <h3>Konsultasi Dokter</h3>
+            <p>Konsultasi langsung dengan dokter spesialis kulit berpengalaman untuk analisis kondisi kulit dan rekomendasi perawatan.</p>
+            <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="service-link" target="_blank" rel="noopener">
+              Booking Sekarang
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BEFORE & AFTER ========== -->
+  <section class="before-after" id="hasil">
+    <div class="container">
+      <div class="ba-wrapper">
+        <div class="ba-image reveal">
+          <img src="assets/before-after-1.png" alt="Hasil perawatan sebelum dan sesudah di Oriskin Bogor" loading="lazy" width="600" height="400">
+        </div>
+        <div class="ba-content reveal reveal-delay-1">
+          <p class="section-label">Hasil Nyata</p>
+          <h2 class="section-title">Transformasi yang Berbicara</h2>
+          <p>Kami percaya hasil terbaik berbicara sendiri. Lihat bagaimana perawatan kami telah membantu ribuan pasien mendapatkan kulit impian mereka.</p>
+          <p>Setiap perawatan disesuaikan dengan kondisi dan kebutuhan kulit masing-masing pasien untuk hasil yang optimal dan aman.</p>
+          <div class="ba-stats">
+            <div class="ba-stat">
+              <strong>95%</strong>
+              <span>Pasien puas dengan hasil</span>
+            </div>
+            <div class="ba-stat">
+              <strong>3-6x</strong>
+              <span>Sesi untuk hasil optimal</span>
+            </div>
+          </div>
+          <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="btn-primary" target="_blank" rel="noopener">
+            Konsultasi Sekarang
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DOCTOR ========== -->
+  <section class="doctor" id="dokter">
+    <div class="container">
+      <div class="doctor-wrapper">
+        <div class="doctor-image reveal">
+          <img src="assets/doctor-portrait.png" alt="Dokter kecantikan profesional di Oriskin Ekalokasari Bogor" loading="lazy" width="500" height="600">
+          <div class="doctor-accent"></div>
+        </div>
+        <div class="doctor-content reveal reveal-delay-1">
+          <p class="section-label">Tim Dokter Kami</p>
+          <h2>dr. Oriskin Specialist</h2>
+          <p class="doctor-title">Dokter Estetika & Kecantikan Kulit</p>
+          <p>Dengan pengalaman lebih dari 10 tahun di bidang estetika dan dermatologi, tim dokter kami berkomitmen memberikan perawatan terbaik dengan standar keamanan tertinggi.</p>
+          <p>Setiap prosedur dilakukan dengan teknik terkini dan produk berkualitas internasional untuk memastikan hasil yang optimal bagi setiap pasien.</p>
+          <div class="doctor-credentials">
+            <span class="credential-tag">Certified Aesthetic Doctor</span>
+            <span class="credential-tag">10+ Tahun Pengalaman</span>
+            <span class="credential-tag">5000+ Pasien</span>
+            <span class="credential-tag">Pelatihan Internasional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROMO ========== -->
+  <section class="promo" id="promo">
+    <div class="container">
+      <div class="promo-card reveal">
+        <div class="promo-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Promo Spesial Bulan Ini
+        </div>
+        <h2>Diskon Hingga <em>30%</em> untuk Perawatan Pertama</h2>
+        <p>Dapatkan penawaran eksklusif untuk kunjungan pertama Anda. Konsultasi gratis dengan dokter ahli dan nikmati perawatan premium dengan harga spesial.</p>
+        <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="btn-primary" target="_blank" rel="noopener">
+          Klaim Promo Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="promo-terms">*Syarat dan ketentuan berlaku. Promo berlaku sampai akhir bulan ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimoni">
+    <div class="container">
+      <div class="testimonials-header reveal">
+        <p class="section-label">Testimoni</p>
+        <h2 class="section-title">Apa Kata Mereka</h2>
+        <p class="section-subtitle">Cerita nyata dari pasien yang telah merasakan manfaat perawatan di Oriskin Ekalokasari Bogor.</p>
+      </div>
+      <div class="testi-carousel reveal reveal-delay-1" id="testiCarousel">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+              </div>
+              <p class="testi-text">"Sudah 2 tahun jadi pasien setia Oriskin. Flek hitam di wajah saya sudah hilang hampir 90% setelah rutin perawatan laser. Dokternya ramah, detail, dan selalu menjelaskan prosedur dengan sabar. Sangat recommended!"</p>
+              <div class="testi-author">
+                <div class="testi-avatar">RA</div>
+                <div>
+                  <div class="testi-name">Rina Anggraini</div>
+                  <div class="testi-role">Ibu Rumah Tangga, Bogor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+              </div>
+              <p class="testi-text">"Awalnya ragu mau coba facial di sini, tapi setelah konsultasi sama dokternya langsung yakin. Perawatannya nyaman, hasilnya langsung kelihatan dari sesi pertama. Kulit jadi lebih glowing dan sehat. Tempatnya juga bersih dan cozy banget!"</p>
+              <div class="testi-author">
+                <div class="testi-avatar">DP</div>
+                <div>
+                  <div class="testi-name">Dewi Puspita</div>
+                  <div class="testi-role">Karyawan Swasta, Depok</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+              </div>
+              <p class="testi-text">"Chemical peeling di Oriskin beneran bagus! Bekas jerawat saya yang sudah bertahun-tahun akhirnya mulai memudar. Prosesnya cepat dan nggak sakit. Tim kliniknya profesional dan ramah. Worth every penny, pokoknya puas banget!"</p>
+              <div class="testi-author">
+                <div class="testi-avatar">SA</div>
+                <div>
+                  <div class="testi-name">Sarah Amelia</div>
+                  <div class="testi-role">Mahasiswi, Bogor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-dots" id="testiDots">
+          <button class="testi-dot active" data-index="0" aria-label="Slide 1"></button>
+          <button class="testi-dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="testi-dot" data-index="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-header reveal">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">Pertanyaan Umum</h2>
+        <p class="section-subtitle">Jawaban untuk pertanyaan yang sering diajukan tentang perawatan di Oriskin Ekalokasari Bogor.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah konsultasi pertama gratis?</span>
+            <span class="faq-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Ya, konsultasi pertama dengan dokter kami sepenuhnya gratis. Anda bisa berkonsultasi tentang kondisi kulit, mendapatkan analisis kulit, dan rekomendasi perawatan yang sesuai tanpa biaya apapun. Hubungi kami via WhatsApp untuk membuat janji.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" aria-expanded="false">
+            <span>Berapa lama waktu yang dibutuhkan untuk melihat hasil?</span>
+            <span class="faq-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Hasil perawatan bervariasi tergantung jenis treatment dan kondisi kulit Anda. Untuk facial treatment, Anda bisa melihat perbedaan setelah sesi pertama. Untuk laser dan chemical peeling, biasanya diperlukan 3-6 sesi untuk hasil yang optimal. Dokter kami akan memberikan timeline yang realistis saat konsultasi.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" aria-expanded="false">
+            <span>Apakah perawatan di Oriskin aman untuk semua jenis kulit?</span>
+            <span class="faq-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Tentu! Sebelum melakukan perawatan apapun, dokter kami akan melakukan analisis menyeluruh terhadap jenis dan kondisi kulit Anda. Setiap treatment disesuaikan secara khusus agar aman dan efektif untuk tipe kulit Anda, termasuk kulit sensitif. Kami menggunakan produk dan alat berstandar internasional yang telah teruji secara klinis.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" aria-expanded="false">
+            <span>Bagaimana cara membuat janji perawatan?</span>
+            <span class="faq-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sangat mudah! Anda bisa langsung menghubungi kami melalui WhatsApp di nomor 0812-8804-5939 atau klik tombol "Konsultasi Gratis" di halaman ini. Tim kami akan membantu Anda memilih jadwal yang sesuai. Kami juga menerima walk-in, namun disarankan untuk membuat janji terlebih dahulu agar tidak perlu menunggu.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-4">
+          <button class="faq-question" aria-expanded="false">
+            <span>Berapa kisaran biaya perawatan di Oriskin?</span>
+            <span class="faq-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Biaya perawatan bervariasi tergantung jenis treatment yang dipilih. Kami menawarkan berbagai pilihan yang disesuaikan dengan berbagai budget. Saat ini kami juga memiliki promo diskon hingga 30% untuk kunjungan pertama. Untuk informasi harga detail, silakan hubungi kami melalui WhatsApp dan tim kami akan dengan senang hati membantu Anda.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCATION ========== -->
+  <section class="location" id="lokasi">
+    <div class="container">
+      <div class="location-header reveal">
+        <p class="section-label">Lokasi</p>
+        <h2 class="section-title">Kunjungi Klinik Kami</h2>
+        <p class="section-subtitle">Berlokasi strategis di kawasan Ekalokasari, Bogor. Mudah dijangkau dan tersedia parkir luas.</p>
+      </div>
+      <div class="location-grid">
+        <div class="location-map reveal">
+          <img src="assets/clinic-exterior.png" alt="Tampak luar klinik Oriskin Ekalokasari Bogor" loading="lazy" width="600" height="400">
+        </div>
+        <div class="location-details reveal reveal-delay-1">
+          <div class="location-item">
+            <div class="location-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Alamat</h4>
+              <p>Lippo Plaza Bogor 1, Jl. Siliwangi No.123 Ekalokasari Lt.UG #3, Sukasari, Kec. Bogor Timur, Kota Bogor, Jawa Barat 16142</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Telepon / WhatsApp</h4>
+              <p>0812-8804-5939</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <div class="location-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Jam Operasional</h4>
+              <div class="location-hours">
+                <div class="hour-row">
+                  <span class="day">Senin - Sabtu</span>
+                  <span class="time">09:00 - 20:00 WIB</span>
+                </div>
+                <div class="hour-row closed">
+                  <span class="day">Minggu</span>
+                  <span class="time">Tutup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-content reveal">
+        <p class="section-label">Mulai Sekarang</p>
+        <h2>Siap Memiliki Kulit Impian Anda?</h2>
+        <p>Jangan tunda lagi. Konsultasikan kondisi kulit Anda dengan dokter ahli kami dan dapatkan perawatan yang tepat untuk kulit terbaik Anda.</p>
+        <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="btn-primary" target="_blank" rel="noopener">
+          Hubungi Kami Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Ori<span>skin</span></div>
+          <p class="footer-desc">Klinik kecantikan premium di Bogor dengan perawatan profesional dan teknologi terkini untuk kulit sehat dan bercahaya.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Layanan</h4>
+          <ul class="footer-links">
+            <li><a href="#layanan">Facial Treatment</a></li>
+            <li><a href="#layanan">Laser Treatment</a></li>
+            <li><a href="#layanan">Chemical Peeling</a></li>
+            <li><a href="#layanan">Konsultasi Dokter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Navigasi</h4>
+          <ul class="footer-links">
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#hasil">Hasil</a></li>
+            <li><a href="#dokter">Dokter</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Kontak</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+6281288045939">0812-8804-5939</a></li>
+            <li><a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li>Lippo Plaza Bogor 1</li>
+            <li>Jl. Siliwangi No.123, Ekalokasari</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Oriskin Ekalokasari Bogor. Semua hak dilindungi.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== STICKY WA BUTTON ========== -->
+  <div class="wa-sticky">
+    <span class="wa-tooltip">Chat dengan kami</span>
+    <a href="https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi" class="wa-btn" target="_blank" rel="noopener" aria-label="Hubungi kami via WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    (function() {
+      'use strict';
+
+      // ===== NAVBAR SCROLL =====
+      const navbar = document.getElementById('navbar');
+      let lastScroll = 0;
+
+      function handleScroll() {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 60) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        lastScroll = currentScroll;
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      // ===== MOBILE MENU =====
+      const navToggle = document.getElementById('navToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+
+      navToggle.addEventListener('click', function() {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        this.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
+      });
+
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          navToggle.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // ===== SCROLL REVEAL (IntersectionObserver) =====
+      var revealElements = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(function(el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        // Fallback for older browsers
+        revealElements.forEach(function(el) {
+          el.classList.add('active');
+        });
+      }
+
+      // ===== FAQ ACCORDION =====
+      var faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(function(item) {
+        var questionBtn = item.querySelector('.faq-question');
+        var answer = item.querySelector('.faq-answer');
+
+        questionBtn.addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+
+          // Close all
+          faqItems.forEach(function(otherItem) {
+            otherItem.classList.remove('open');
+            var otherAnswer = otherItem.querySelector('.faq-answer');
+            otherAnswer.style.maxHeight = null;
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+
+          // Open clicked if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            questionBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // ===== TESTIMONIAL CAROUSEL =====
+      var testiTrack = document.getElementById('testiTrack');
+      var testiDots = document.querySelectorAll('.testi-dot');
+      var currentSlide = 0;
+      var totalSlides = 3;
+      var autoSlideInterval;
+      var slidesPerView = 1;
+
+      function getSlidesPerView() {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 640) return 2;
+        return 1;
+      }
+
+      function getMaxSlide() {
+        var spv = getSlidesPerView();
+        return Math.max(0, totalSlides - spv);
+      }
+
+      function updateCarousel(animate) {
+        slidesPerView = getSlidesPerView();
+        var slideWidth = 100 / slidesPerView;
+        var offset = currentSlide * slideWidth;
+        if (animate !== false) {
+          testiTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        } else {
+          testiTrack.style.transition = 'none';
+        }
+        testiTrack.style.transform = 'translateX(-' + offset + '%)';
+
+        testiDots.forEach(function(dot, i) {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+      }
+
+      function nextSlide() {
+        var maxSlide = getMaxSlide();
+        currentSlide = (currentSlide >= maxSlide) ? 0 : currentSlide + 1;
+        updateCarousel();
+      }
+
+      function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideInterval = setInterval(nextSlide, 4500);
+      }
+
+      function stopAutoSlide() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+        }
+      }
+
+      testiDots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          var index = parseInt(this.getAttribute('data-index'));
+          var maxSlide = getMaxSlide();
+          currentSlide = Math.min(index, maxSlide);
+          updateCarousel();
+          startAutoSlide();
+        });
+      });
+
+      // Touch/swipe support
+      var touchStartX = 0;
+      var touchEndX = 0;
+
+      testiTrack.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoSlide();
+      }, { passive: true });
+
+      testiTrack.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+        var maxSlide = getMaxSlide();
+
+        if (Math.abs(diff) > 50) {
+          if (diff > 0 && currentSlide < maxSlide) {
+            currentSlide++;
+          } else if (diff < 0 && currentSlide > 0) {
+            currentSlide--;
+          }
+          updateCarousel();
+        }
+        startAutoSlide();
+      }, { passive: true });
+
+      window.addEventListener('resize', function() {
+        var maxSlide = getMaxSlide();
+        if (currentSlide > maxSlide) {
+          currentSlide = maxSlide;
+        }
+        updateCarousel(false);
+      });
+
+      updateCarousel(false);
+      startAutoSlide();
+
+      // ===== SMOOTH SCROLL FOR NAV LINKS =====
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            var navHeight = navbar.offsetHeight;
+            var targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({
+              top: targetPos,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>

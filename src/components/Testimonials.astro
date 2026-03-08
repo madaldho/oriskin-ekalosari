@@ -1,0 +1,269 @@
+---
+const testimonials = [
+  {
+    text: '"Sudah 2 tahun jadi pasien setia Oriskin. Flek hitam di wajah saya sudah hilang hampir 90% setelah rutin perawatan laser. Dokternya ramah, detail, dan selalu menjelaskan prosedur dengan sabar. Sangat recommended!"',
+    initials: 'RA',
+    name: 'Rina Anggraini',
+    role: 'Ibu Rumah Tangga, Bogor',
+  },
+  {
+    text: '"Awalnya ragu mau coba facial di sini, tapi setelah konsultasi sama dokternya langsung yakin. Perawatannya nyaman, hasilnya langsung kelihatan dari sesi pertama. Kulit jadi lebih glowing dan sehat. Tempatnya juga bersih dan cozy banget!"',
+    initials: 'DP',
+    name: 'Dewi Puspita',
+    role: 'Karyawan Swasta, Depok',
+  },
+  {
+    text: '"Chemical peeling di Oriskin beneran bagus! Bekas jerawat saya yang sudah bertahun-tahun akhirnya mulai memudar. Prosesnya cepat dan nggak sakit. Tim kliniknya profesional dan ramah. Worth every penny, pokoknya puas banget!"',
+    initials: 'SA',
+    name: 'Sarah Amelia',
+    role: 'Mahasiswi, Bogor',
+  },
+];
+---
+
+<section class="testimonials" id="testimoni">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <p class="section-label">Testimoni</p>
+      <h2 class="section-title">Apa Kata Mereka</h2>
+      <p class="section-subtitle">Cerita nyata dari pasien yang telah merasakan manfaat perawatan di Oriskin Ekalokasari Bogor.</p>
+    </div>
+    <div class="testi-carousel reveal reveal-delay-1" id="testiCarousel">
+      <div class="testi-track" id="testiTrack">
+        {testimonials.map((testi) => (
+          <div class="testi-slide">
+            <div class="testi-card">
+              <div class="testi-stars" aria-label="5 dari 5 bintang">
+                {Array.from({ length: 5 }).map(() => (
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                ))}
+              </div>
+              <p class="testi-text">{testi.text}</p>
+              <div class="testi-author">
+                <div class="testi-avatar">{testi.initials}</div>
+                <div>
+                  <div class="testi-name">{testi.name}</div>
+                  <div class="testi-role">{testi.role}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="testi-dots" id="testiDots">
+        {testimonials.map((_, i) => (
+          <button class={`testi-dot ${i === 0 ? 'active' : ''}`} data-index={i} aria-label={`Slide ${i + 1}`}></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const testiTrack = document.getElementById('testiTrack');
+  const testiDots = document.querySelectorAll('.testi-dot');
+  let currentSlide = 0;
+  const totalSlides = 3;
+  let autoSlideInterval: ReturnType<typeof setInterval>;
+
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  }
+
+  function getMaxSlide() {
+    return Math.max(0, totalSlides - getSlidesPerView());
+  }
+
+  function updateCarousel(animate = true) {
+    const slidesPerView = getSlidesPerView();
+    const slideWidth = 100 / slidesPerView;
+    const offset = currentSlide * slideWidth;
+    if (testiTrack) {
+      testiTrack.style.transition = animate
+        ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        : 'none';
+      testiTrack.style.transform = `translateX(-${offset}%)`;
+    }
+    testiDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  function nextSlide() {
+    const maxSlide = getMaxSlide();
+    currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
+    updateCarousel();
+  }
+
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlideInterval = setInterval(nextSlide, 4500);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+  }
+
+  testiDots.forEach((dot) => {
+    dot.addEventListener('click', function() {
+      const index = parseInt(this.getAttribute('data-index') || '0');
+      currentSlide = Math.min(index, getMaxSlide());
+      updateCarousel();
+      startAutoSlide();
+    });
+  });
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  testiTrack?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoSlide();
+  }, { passive: true });
+
+  testiTrack?.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    const maxSlide = getMaxSlide();
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && currentSlide < maxSlide) currentSlide++;
+      else if (diff < 0 && currentSlide > 0) currentSlide--;
+      updateCarousel();
+    }
+    startAutoSlide();
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    if (currentSlide > getMaxSlide()) currentSlide = getMaxSlide();
+    updateCarousel(false);
+  });
+
+  updateCarousel(false);
+  startAutoSlide();
+</script>
+
+<style>
+  .testimonials {
+    padding: 96px 0;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .testimonials-header .section-subtitle {
+    margin: 0 auto;
+  }
+
+  .testi-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testi-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .testi-slide {
+    min-width: 100%;
+    padding: 0 8px;
+  }
+
+  .testi-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    height: 100%;
+  }
+
+  .testi-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+
+  .testi-stars svg {
+    width: 18px;
+    height: 18px;
+    fill: #F59E0B;
+  }
+
+  .testi-text {
+    font-size: 1rem;
+    color: var(--charcoal-light);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .testi-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--sage-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .testi-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+  }
+
+  .testi-role {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .testi-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .testi-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    padding: 0;
+  }
+
+  .testi-dot.active {
+    background: var(--terracotta);
+    width: 28px;
+    border-radius: 5px;
+  }
+
+  @media (min-width: 640px) {
+    .testi-slide {
+      min-width: 50%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testi-slide {
+      min-width: 33.333%;
+    }
+  }
+</style>

@@ -1,0 +1,265 @@
+---
+const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi';
+
+const navItems = [
+  { href: '#layanan', label: 'Layanan' },
+  { href: '#hasil', label: 'Hasil' },
+  { href: '#dokter', label: 'Dokter' },
+  { href: '#testimoni', label: 'Testimoni' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#lokasi', label: 'Lokasi' },
+];
+---
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Navigasi utama">
+  <div class="container">
+    <a href="#" class="nav-brand">Ori<span>skin</span> <small>Ekalokasari</small></a>
+    <ul class="nav-links">
+      {navItems.map(item => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+    <a href={waLink} class="nav-cta" target="_blank" rel="noopener">Konsultasi Gratis</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu navigasi mobile">
+  {navItems.map(item => (
+    <a href={item.href} class="mobile-link">{item.label}</a>
+  ))}
+  <a href={waLink} class="btn-primary" target="_blank" rel="noopener">
+    Konsultasi Gratis
+  </a>
+</div>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  function handleScroll() {
+    if (window.pageYOffset > 60) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  navToggle?.addEventListener('click', function() {
+    this.classList.toggle('open');
+    mobileMenu?.classList.toggle('open');
+    document.body.style.overflow = mobileMenu?.classList.contains('open') ? 'hidden' : '';
+    this.setAttribute('aria-expanded', String(mobileMenu?.classList.contains('open')));
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navToggle?.classList.remove('open');
+      mobileMenu?.classList.remove('open');
+      document.body.style.overflow = '';
+      navToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = (this as HTMLAnchorElement).getAttribute('href');
+      if (targetId === '#') return;
+      const targetEl = document.querySelector(targetId!);
+      if (targetEl) {
+        e.preventDefault();
+        const navHeight = navbar?.offsetHeight ?? 0;
+        const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all 0.4s ease;
+  }
+
+  .navbar.scrolled {
+    background: rgba(247, 244, 239, 0.82);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(229, 224, 216, 0.5);
+    padding: 12px 0;
+  }
+
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-brand span {
+    color: var(--terracotta);
+  }
+
+  .nav-brand small {
+    display: block;
+    font-size: 0.55rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-top: -2px;
+  }
+
+  .nav-links {
+    display: none;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--charcoal-light);
+    transition: color var(--transition);
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--terracotta);
+    transition: width var(--transition);
+  }
+
+  .nav-links a:hover {
+    color: var(--terracotta);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    display: none;
+    padding: 10px 24px;
+    background: var(--terracotta);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 60px;
+    transition: all var(--transition);
+  }
+
+  .nav-cta:hover {
+    background: var(--terracotta-dark);
+    transform: translateY(-1px);
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--charcoal);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .mobile-menu.open {
+    right: 0;
+  }
+
+  .mobile-menu a {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    transition: color var(--transition);
+  }
+
+  .mobile-menu a:hover {
+    color: var(--terracotta);
+  }
+
+  .mobile-menu .btn-primary {
+    margin-top: 12px;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+  }
+</style>

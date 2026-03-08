@@ -1,0 +1,118 @@
+---
+const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20konsultasi';
+---
+
+<section class="promo" id="promo">
+  <div class="container">
+    <div class="promo-card reveal">
+      <div class="promo-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Promo Spesial Bulan Ini
+      </div>
+      <h2>Diskon Hingga <em>30%</em> untuk Perawatan Pertama</h2>
+      <p>Dapatkan penawaran eksklusif untuk kunjungan pertama Anda. Konsultasi gratis dengan dokter ahli dan nikmati perawatan premium dengan harga spesial.</p>
+      <a href={waLink} class="btn-primary" target="_blank" rel="noopener">
+        Klaim Promo Sekarang
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="promo-terms">*Syarat dan ketentuan berlaku. Promo berlaku sampai akhir bulan ini.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .promo {
+    padding: 96px 0;
+    background: var(--white);
+  }
+
+  .promo-card {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #2D3748 100%);
+    border-radius: var(--radius-xl);
+    padding: 48px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promo-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201,122,90,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .promo-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(110,127,99,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .promo-card > :global(*) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .promo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(201,122,90,0.15);
+    border: 1px solid rgba(201,122,90,0.3);
+    border-radius: 60px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--terracotta-light);
+    margin-bottom: 24px;
+  }
+
+  .promo-card h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .promo-card h2 em {
+    font-style: italic;
+    color: var(--terracotta-light);
+  }
+
+  .promo-card > p {
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .promo-card .btn-primary {
+    background: var(--terracotta);
+    font-size: 1rem;
+    padding: 18px 42px;
+  }
+
+  .promo-card .btn-primary:hover {
+    background: var(--terracotta-light);
+  }
+
+  .promo-terms {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  @media (min-width: 1024px) {
+    .promo-card {
+      padding: 72px 64px;
+    }
+  }
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oriskin-ekalokasari.com/sitemap-index.xml
