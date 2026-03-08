@@ -1,105 +1,331 @@
 ---
-const credentials = [
-  'Certified Aesthetic Doctor',
-  '10+ Tahun Pengalaman',
-  '5000+ Pasien',
-  'Pelatihan Internasional',
+const doctors = [
+  {
+    id: 1,
+    name: 'dr. Sarah Wijaya, Sp.KK',
+    role: 'Dokter Spesialis Kulit',
+    description: 'Spesialis dermatologi dengan 10+ tahun pengalaman dalam perawatan kulit klinis dan estetika.',
+    image: '/doctor-portrait.png',
+  },
+  {
+    id: 2,
+    name: 'dr. Nina Kusuma, Sp.DV',
+    role: 'Dokter Estetika',
+    description: 'Ahli laser treatment dan anti-aging dengan sertifikasi internasional dari Eropa.',
+    image: '/doctor-portrait.png',
+  },
+  {
+    id: 3,
+    name: 'dr. Amanda Putri, M.Kes',
+    role: 'Dokter Kecantikan',
+    description: 'Fokus pada chemical peeling dan acne treatment, melayani 3000+ pasien setiap tahun.',
+    image: '/doctor-portrait.png',
+  },
 ];
 ---
 
 <section class="doctor" id="dokter">
   <div class="container">
-    <div class="doctor-wrapper">
-      <div class="doctor-image reveal">
-        <img src="/doctor-portrait.png" alt="Dokter kecantikan profesional di Oriskin Ekalokasari Bogor" loading="lazy" width="500" height="600" />
-        <div class="doctor-accent"></div>
+    <div class="doctor-header reveal">
+      <p class="section-label">Tim Dokter Kami</p>
+      <h2 class="section-title">Dokter Profesional Bersertifikat</h2>
+      <p class="section-subtitle">Dipercaya oleh ribuan pasien untuk perawatan kulit terbaik di Bogor</p>
+    </div>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-container" id="doctorCarousel">
+        {doctors.map((doctor, index) => (
+          <div class="doctor-card" data-index={index}>
+            <div class="doctor-image-wrapper">
+              <img src={doctor.image} alt={doctor.name} loading="lazy" />
+              <div class="doctor-gradient"></div>
+            </div>
+            <div class="doctor-info">
+              <div class="doctor-stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <h3>{doctor.name}</h3>
+              <p class="doctor-role">{doctor.role}</p>
+              <p class="doctor-desc">{doctor.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div class="doctor-content reveal reveal-delay-1">
-        <p class="section-label">Tim Dokter Kami</p>
-        <h2>dr. Oriskin Specialist</h2>
-        <p class="doctor-title">Dokter Estetika & Kecantikan Kulit</p>
-        <p>Dengan pengalaman lebih dari 10 tahun di bidang estetika dan dermatologi, tim dokter kami berkomitmen memberikan perawatan terbaik dengan standar keamanan tertinggi.</p>
-        <p>Setiap prosedur dilakukan dengan teknik terkini dan produk berkualitas internasional untuk memastikan hasil yang optimal bagi setiap pasien.</p>
-        <div class="doctor-credentials">
-          {credentials.map(cred => (
-            <span class="credential-tag">{cred}</span>
-          ))}
-        </div>
+
+      <div class="carousel-indicators">
+        {doctors.map((_, index) => (
+          <button class="indicator" data-index={index} aria-label={`Slide ${index + 1}`}></button>
+        ))}
       </div>
     </div>
   </div>
 </section>
 
+<script>
+  const carousel = document.getElementById('doctorCarousel');
+  const cards = carousel?.querySelectorAll('.doctor-card');
+  const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+  let currentIndex = 0;
+  let autoplayInterval: number | undefined;
+
+  function updateCarousel(index: number) {
+    if (!cards || cards.length === 0) return;
+    
+    currentIndex = index;
+    const totalCards = cards.length;
+
+    cards.forEach((card, i) => {
+      const offset = i - currentIndex;
+      const absOffset = Math.abs(offset);
+      
+      // Center card
+      if (offset === 0) {
+        (card as HTMLElement).style.transform = 'translateX(0) scale(1)';
+        (card as HTMLElement).style.opacity = '1';
+        (card as HTMLElement).style.zIndex = '10';
+        (card as HTMLElement).style.filter = 'blur(0)';
+      }
+      // Right side
+      else if (offset === 1 || (currentIndex === totalCards - 1 && i === 0)) {
+        (card as HTMLElement).style.transform = 'translateX(115%) scale(0.85)';
+        (card as HTMLElement).style.opacity = '0.4';
+        (card as HTMLElement).style.zIndex = String(9 - absOffset);
+        (card as HTMLElement).style.filter = 'blur(1px)';
+      }
+      // Left side
+      else if (offset === -1 || (currentIndex === 0 && i === totalCards - 1)) {
+        (card as HTMLElement).style.transform = 'translateX(-115%) scale(0.85)';
+        (card as HTMLElement).style.opacity = '0.4';
+        (card as HTMLElement).style.zIndex = String(9 - absOffset);
+        (card as HTMLElement).style.filter = 'blur(1px)';
+      }
+      // Hidden
+      else {
+        (card as HTMLElement).style.opacity = '0';
+        (card as HTMLElement).style.transform = offset > 0 ? 'translateX(200%) scale(0.7)' : 'translateX(-200%) scale(0.7)';
+        (card as HTMLElement).style.zIndex = '0';
+      }
+    });
+
+    // Update indicators
+    indicators.forEach((ind, i) => {
+      ind.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function nextSlide() {
+    if (!cards) return;
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel(currentIndex);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayInterval = window.setInterval(nextSlide, 3000);
+  }
+
+  function stopAutoplay() {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+    }
+  }
+
+  // Click handlers
+  cards?.forEach((card) => {
+    card.addEventListener('click', () => {
+      const index = parseInt((card as HTMLElement).dataset.index || '0');
+      updateCarousel(index);
+      startAutoplay();
+    });
+  });
+
+  indicators.forEach((ind) => {
+    ind.addEventListener('click', () => {
+      const index = parseInt((ind as HTMLElement).dataset.index || '0');
+      updateCarousel(index);
+      startAutoplay();
+    });
+  });
+
+  // Pause on hover
+  carousel?.addEventListener('mouseenter', stopAutoplay);
+  carousel?.addEventListener('mouseleave', startAutoplay);
+
+  // Initialize
+  updateCarousel(0);
+  startAutoplay();
+</script>
+
 <style>
   .doctor {
     padding: 96px 0;
+    background: linear-gradient(180deg, var(--white) 0%, var(--bg) 100%);
+    overflow: hidden;
   }
 
-  .doctor-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-    align-items: center;
+  .doctor-header {
+    text-align: center;
+    margin-bottom: 56px;
   }
 
-  .doctor-image {
+  .carousel-wrapper {
     position: relative;
   }
 
-  .doctor-image img {
+  .carousel-container {
+    position: relative;
     width: 100%;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .doctor-accent {
+  .doctor-card {
     position: absolute;
-    bottom: -16px;
-    right: -16px;
-    width: 120px;
-    height: 120px;
-    background: var(--sage-pale);
-    border-radius: 50%;
-    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: clamp(280px, 32vw, 360px);
+    aspect-ratio: 1 / 1.85;
+    border-radius: 28px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
   }
 
-  .doctor-content h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  .doctor-card.active {
+    border: 4px solid var(--pink);
+    box-shadow: 0 0 40px rgba(232,123,123,0.5);
+  }
+
+  .doctor-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .doctor-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .doctor-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(45,42,50,0.4) 40%,
+      rgba(45,42,50,0.95) 100%
+    );
+  }
+
+  .doctor-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    color: var(--white);
+    z-index: 2;
+  }
+
+  .doctor-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .doctor-stars svg {
+    width: 16px;
+    height: 16px;
+    color: var(--pink);
+  }
+
+  .doctor-info h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .doctor-role {
+    color: var(--pink-light);
+    font-weight: 600;
+    font-size: 0.9rem;
     margin-bottom: 8px;
   }
 
-  .doctor-title {
-    font-size: 1rem;
-    color: var(--terracotta);
-    font-weight: 600;
-    margin-bottom: 20px;
+  .doctor-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    margin-top: 8px;
   }
 
-  .doctor-content p {
-    color: var(--text-muted);
-    margin-bottom: 16px;
-    line-height: 1.8;
-  }
-
-  .doctor-credentials {
+  .carousel-indicators {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 24px;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 48px;
   }
 
-  .credential-tag {
-    padding: 8px 16px;
-    background: var(--sage-pale);
-    border-radius: 60px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--sage);
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
 
-  @media (min-width: 768px) {
-    .doctor-wrapper {
-      grid-template-columns: 1fr 1fr;
+  .indicator:hover {
+    background: var(--pink-pale);
+  }
+
+  .indicator.active {
+    width: 32px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--pink) 0%, var(--pink-dark) 100%);
+    box-shadow: 0 0 12px rgba(232,123,123,0.6);
+  }
+
+  @media (max-width: 767px) {
+    .doctor {
+      padding: 84px 0;
+    }
+
+    .doctor-header {
+      margin-bottom: 36px;
+    }
+
+    .carousel-container {
+      height: 520px;
+    }
+
+    .doctor-card {
+      width: clamp(260px, 80vw, 320px);
+    }
+
+    .doctor-info {
+      padding: 20px;
+    }
+
+    .doctor-info h3 {
+      font-size: 1.25rem;
+    }
+
+    .doctor-desc {
+      font-size: 0.8rem;
     }
   }
 </style>

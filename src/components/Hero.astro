@@ -1,5 +1,5 @@
 ---
-const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20sudah%20siap%20reservasi.%20Kapan%20bisa%3F';
+const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%20reservasi%20Oriskin';
 ---
 
 <section class="hero" id="hero">
@@ -17,10 +17,6 @@ const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20suda
           Reservasi Sekarang
         </a>
         <a href="#layanan" class="btn-secondary">Lihat Layanan</a>
-      </div>
-      <div class="hero-schedule reveal reveal-delay-4">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span>Senin – Sabtu, 09:00 – 22:00 WIB</span>
       </div>
     </div>
   </div>
@@ -88,38 +84,27 @@ const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20suda
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 28px;
+  }
+
+  .hero-buttons .btn-primary {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-buttons .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232,123,123,0.4);
   }
 
   .hero-buttons .btn-secondary {
     color: var(--white);
     border-color: rgba(255,255,255,0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hero-buttons .btn-secondary:hover {
     background: rgba(255,255,255,0.12);
     border-color: rgba(255,255,255,0.6);
-  }
-
-  .hero-schedule {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 60px;
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.9);
-    font-weight: 500;
-  }
-
-  .hero-schedule svg {
-    width: 16px;
-    height: 16px;
-    color: var(--pink-pale);
-    flex-shrink: 0;
+    transform: translateY(-2px);
   }
 
   @media (max-width: 767px) {
