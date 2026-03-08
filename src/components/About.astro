@@ -1,0 +1,125 @@
+---
+const highlights = [
+  'Dokter spesialis kulit bersertifikat',
+  'Teknologi perawatan terkini',
+  'Harga terjangkau, hasil maksimal',
+  'Konsultasi gratis sebelum treatment',
+];
+---
+
+<section class="about" id="tentang">
+  <div class="container">
+    <div class="about-shell">
+      <div class="about-visual reveal">
+        <img src="/img-1.jpg" alt="Klinik Oriskin Ekalokasari Bogor" width="800" height="600" class="about-img" loading="lazy" />
+      </div>
+      <div class="about-copy reveal reveal-delay-1">
+        <p class="section-label">Tentang Kami</p>
+        <h2 class="section-title">Kenapa Banyak yang Pilih Oriskin?</h2>
+        <p class="about-text">Oriskin bukan klinik kecantikan biasa. Kami percaya perawatan kulit itu harus jelas — mulai dari konsultasi, treatment, sampai hasilnya. Makanya di Oriskin, setiap pasien dapat penjelasan langsung dari dokter, bukan sekadar treatment instan.</p>
+        <p class="about-text">Dengan pengalaman melayani ribuan pasien dan cabang di lebih dari 50 kota, standar kami sudah teruji. Tapi pendekatan kami tetap personal — karena kondisi kulit tiap orang beda.</p>
+
+        <ul class="about-list">
+          {highlights.map((item) => (
+            <li>
+              <span class="about-check" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 96px 0;
+    background: var(--white);
+  }
+
+  .about-shell {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .about-visual {
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .about-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  .about-copy {
+    max-width: 580px;
+  }
+
+  .about-text {
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+
+  .about-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .about-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  .about-check {
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--pink-pale);
+    color: var(--pink-dark);
+    flex-shrink: 0;
+  }
+
+  .about-check svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  @media (min-width: 768px) {
+    .about-shell {
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about {
+      padding: 72px 0;
+    }
+
+    .about-img {
+      aspect-ratio: 4 / 3;
+    }
+
+    .about-text {
+      font-size: 0.93rem;
+    }
+  }
+</style>

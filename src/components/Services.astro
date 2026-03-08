@@ -79,6 +79,7 @@ const services = [
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
+    align-items: stretch;
   }
 
   .service-card {
@@ -87,6 +88,9 @@ const services = [
     overflow: hidden;
     border: 1px solid var(--border);
     transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .service-card:hover {
@@ -128,6 +132,9 @@ const services = [
 
   .service-card-body {
     padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   .service-card h3 {
@@ -140,6 +147,7 @@ const services = [
     color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 20px;
+    flex: 1;
   }
 
   .service-link {
@@ -166,7 +174,7 @@ const services = [
     transform: translateX(4px);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -179,6 +187,32 @@ const services = [
 
     .service-card-img {
       height: 200px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .services {
+      padding: 84px 0;
+    }
+
+    .services-header {
+      margin-bottom: 36px;
+    }
+
+    .services-grid {
+      gap: 18px;
+    }
+
+    .service-card-img {
+      height: 210px;
+    }
+
+    .service-card-body {
+      padding: 22px 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
     }
   }
 </style>

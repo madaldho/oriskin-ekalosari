@@ -95,4 +95,39 @@ const waLink = 'https://wa.me/6281288045939?text=Halo%20Oriskin%2C%20saya%20mau%
   @media (min-width: 1024px) {
     .cta-card { padding: 80px 64px; }
   }
+
+  @media (max-width: 767px) {
+    .final-cta {
+      padding: 84px 0;
+    }
+
+    .cta-card {
+      padding: 36px 20px;
+      border-radius: 22px;
+    }
+
+    .cta-card::before {
+      width: 280px;
+      height: 280px;
+      top: -36%;
+      right: -34%;
+    }
+
+    .cta-card::after {
+      width: 220px;
+      height: 220px;
+      bottom: -22%;
+      left: -24%;
+    }
+
+    .cta-desc {
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+
+    .cta-btn {
+      padding: 16px 22px;
+      font-size: 0.95rem;
+    }
+  }
 </style>

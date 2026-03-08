@@ -23,8 +23,7 @@ const navLinks = [
     <div class="footer-top">
       <div class="footer-brand-col">
         <div class="footer-brand-row">
-          <img src="/logo-oriskin.png" alt="Oriskin" class="footer-logo" />
-          <div class="footer-brand-text">Ori<em>skin</em> <small>Ekalokasari</small></div>
+          <img src="/logooriskinekalosarii.png" alt="Oriskin Ekalokasari" class="footer-logo" width="512" height="512" />
         </div>
         <p class="footer-desc">Klinik kecantikan premium di Bogor dengan perawatan profesional dan teknologi terkini untuk kulit sehat dan bercahaya.</p>
         <div class="footer-socials">
@@ -93,37 +92,14 @@ const navLinks = [
   .footer-brand-row {
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 14px;
   }
 
   .footer-logo {
-    width: 32px;
-    height: 32px;
+    width: auto;
+    height: 64px;
     object-fit: contain;
-  }
-
-  .footer-brand-text {
-    font-family: 'Lora', serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.85);
-  }
-
-  .footer-brand-text em {
-    font-style: normal;
-    color: var(--pink-light);
-  }
-
-  .footer-brand-text small {
-    display: block;
-    font-size: 0.65rem;
-    font-weight: 400;
-    color: rgba(255,255,255,0.35);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: -2px;
+    object-position: left center;
   }
 
   .footer-desc {
@@ -224,10 +200,28 @@ const navLinks = [
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 767px) {
+    .footer {
+      padding: 48px 0 24px;
+    }
+
     .footer-top {
       grid-template-columns: 1fr;
       gap: 28px;
+    }
+
+    .footer-desc {
+      max-width: 32rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .footer-top {
+      gap: 28px;
+    }
+
+    .footer-logo {
+      height: 56px;
     }
   }
 </style>

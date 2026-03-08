@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://oriskin-ekalokasari.com',
+  site: 'https://oriskin-ekalosari.vercel.app',
   integrations: [sitemap()],
 });

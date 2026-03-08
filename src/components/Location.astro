@@ -112,6 +112,10 @@ const mapsUrl = 'https://www.google.com/maps/place/Oriskin+Ekalokasari/@-6.61195
     align-items: flex-start;
   }
 
+  .location-item > div:last-child {
+    min-width: 0;
+  }
+
   .location-icon {
     width: 44px;
     height: 44px;
@@ -201,6 +205,49 @@ const mapsUrl = 'https://www.google.com/maps/place/Oriskin+Ekalokasari/@-6.61195
     .location-map iframe {
       height: 100%;
       min-height: 320px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .location {
+      padding: 84px 0;
+    }
+
+    .location-header {
+      margin-bottom: 36px;
+    }
+
+    .location-grid {
+      gap: 24px;
+    }
+
+    .location-map iframe {
+      height: 240px;
+    }
+
+    .location-details {
+      gap: 20px;
+    }
+
+    .location-item {
+      gap: 12px;
+    }
+
+    .location-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .hour-row {
+      padding: 10px 12px;
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .hour-row {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>
